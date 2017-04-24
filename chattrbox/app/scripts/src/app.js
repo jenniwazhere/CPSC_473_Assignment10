@@ -1,4 +1,5 @@
 import socket from './ws-client';
+
 class ChatApp {
     constructor() {
         socket.init('ws://localhost:3001');
@@ -20,9 +21,9 @@ class ChatMessage {
         user: u = 'batman',
         timestamp: t = (new Date()).getTime()
     }) {
-        this.user = user;
-        this.message = message;
-        this.timestamp = timestamp;
+        this.message = m;
+        this.user = u;
+        this.timestamp = t;
     }
     serialize() {
         return {
@@ -32,4 +33,5 @@ class ChatMessage {
         };
     }
 }
+
 export default ChatApp;
